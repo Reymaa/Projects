@@ -28,6 +28,9 @@ def calculate_after_tax_income(gross_income):
 
 #####
 def calculate_income_required(rentAmount):
+    #try to have consistent variables names/style
+    #i.e.should be at_rate 
+    # dividing two ints also always gives you a float, doesn't need to be converted
     atRate = float((10/3))
     atIncomeReq = rentAmount * atRate
     return atIncomeReq
@@ -36,6 +39,7 @@ def calculate_income_required(rentAmount):
 
 #####
 try:
+    #good job converting input
     rentAmount = float(input('Enter monthly rent amount: '))
 except ValueError:
     while True:
@@ -56,6 +60,9 @@ except ValueError:
             print('Invalid input! Please try again.')
 
 #####
+
+### Tip: look into using if '__name__' == '__main__': syntax, usually dont want 
+### free code blocks
 aft_income_req = calculate_income_required(rentAmount * 12)
 aft_Tax_income = calculate_after_tax_income(gross_income)
 aft_tax_rent_rate = (rentAmount / (aft_Tax_income / 12))
